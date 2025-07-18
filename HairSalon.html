@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HairQue - Hair Salon</title>
+  <style>
+    /* Reset and base styles */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background: #fff;
+    color: #333;
+    }
+
+    /* Header styles */
+    header {
+    background: #111;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.8s ease-in-out;
+    }
+
+    @keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    }
+
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    }
+
+    nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+    color: #f7b731;
+    }
+
+    /* Hero Section */
+    .hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-in-out;
+    }
+
+    .hero button {
+    padding: 12px 25px;
+    background: #f7b731;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    }
+
+    .hero button:hover {
+    transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+    }
+
+    @keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    }
+
+    /* Services Section */
+    #services {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: #fafafa;
+    }
+
+    #services h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    }
+
+    .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    animation: fadeIn 1.2s ease-in;
+    }
+
+    .service {
+    background: #fff;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .service:hover {
+    background: #f7b731;
+    transform: translateY(-10px);
+    color: white;
+    }
+
+    /* Booking Form */
+    #booking {
+    padding: 60px 30px;
+    background: #f0f0f0;
+    text-align: center;
+    }
+
+    #booking h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    }
+
+    form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: slideUp 1s ease;
+    }
+
+    form input, form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    }
+
+    form button {
+    background: #f7b731;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+
+    form button:hover {
+    background: #e0a800;
+    }
+
+    /* Footer */
+    footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HairQue Salon</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Style Your Hair, Boost Your Confidence</h2>
+    <button onclick="scrollToBooking()">Book Now</button>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">Hair Cut</div>
+      <div class="service">Hair Coloring</div>
+      <div class="service">Beard Trim</div>
+      <div class="service">Hair Spa</div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book Your Appointment</h2>
+    <form id="bookingForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone" required>
+      <select>
+        <option>Hair Cut</option>
+        <option>Hair Coloring</option>
+        <option>Hair Spa</option>
+      </select>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HairQue Salon. All Rights Reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
